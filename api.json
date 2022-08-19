@@ -1,0 +1,40 @@
+
+[ 
+    {
+      "precio": 5000,
+      "id": 1,
+      "title": "Torta 1",
+      "thumbnailUrl": "https://img-global.cpcdn.com/recipes/479e82eb3d79af70/400x400cq70/photo.jpg"
+    },
+    {
+      "precio": 3000,
+      "id": 2,
+      "title": "Torta 2",
+      "thumbnailUrl": "https://cocinerosargentinos.com/content/recipes/500x500/recipes.13695.jpeg"
+    },
+    {
+      "precio": 100,
+      "id": 3,
+      "title": "Torta 3",
+      "thumbnailUrl": "https://cocinerosargentinos.com/content/recipes/500x500/recipes.13880.jpeg" 
+    },
+    {
+      "precio": 5000,
+      "id": 4,
+      "title": "Torta 4",
+      "thumbnailUrl": "https://www.recetasjudias.com/wp-content/uploads/2015/04/Torta-de-crema-y-fresas-para-Pesaj-1.jpg"
+    },
+    {
+      "precio": 3500,
+      "id": 5,
+      "title": "Torta 5",
+      "thumbnailUrl": "https://d320djwtwnl5uo.cloudfront.net/recetas/share/torta_Wk8PuOpz1Jl6D3KARHjErity4YwfVm.png"
+    },
+    {
+      "precio": 5300,
+      "id": 6,
+      "title": "Torta 6",
+      "thumbnailUrl": "https://www.recetasjudias.com/wp-content/uploads/2015/04/Torta-de-crema-y-fresas-para-Pesaj-1.jpg"
+    }
+    
+  ]
