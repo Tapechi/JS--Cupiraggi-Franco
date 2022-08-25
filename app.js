@@ -5,6 +5,7 @@ const templateCard = document.getElementById('template-card').content
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
+
 let carrito = {} //Crear el carrito
 
 const producto = [ 
@@ -108,7 +109,9 @@ const setCarrito = objeto => {
     }
 
     if(carrito.hasOwnProperty(producto.id)) {
-        producto.cantidad = carrito[producto.id].cantidad + 1
+        producto.cantidad = carrito[producto.id].cantidad + 1;
+       
+        
     }
     
 
@@ -159,6 +162,9 @@ const pintarFooter = () => {
     
     const btnBorrar = document.getElementById('vaciar-carrito')
     btnBorrar.addEventListener('click', () => {
+        swal ("Seguro que quiere vaciar el carrito?",{
+            buttons: ["SI","NO"]
+        });
         carrito = {}
         pintarCarrito ()
     })
@@ -182,6 +188,9 @@ const btnAccion = e => {
        }
        pintarCarrito()
     }
-   
+  
+
+
     e.stopPropagation()
 }
+
