@@ -162,11 +162,27 @@ const pintarFooter = () => {
     
     const btnBorrar = document.getElementById('vaciar-carrito')
     btnBorrar.addEventListener('click', () => {
-        swal ("Seguro que quiere vaciar el carrito?",{
-            buttons: ["SI","NO"]
-        });
-        carrito = {}
-        pintarCarrito ()
+        
+        Swal.fire({
+            title: 'Estas seguro ?',
+            text: "Se eliminara el carrito!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Borrar todo!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                carrito = {}
+                pintarCarrito ()
+                Swal.fire(
+                'Borrado!',
+                'Ingrese su nuevo pedido.',
+                'success'
+              )
+            }
+          })
+      
     })
 }
 
@@ -189,7 +205,6 @@ const btnAccion = e => {
        pintarCarrito()
     }
   
-
 
     e.stopPropagation()
 }
