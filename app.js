@@ -8,49 +8,10 @@ const fragment = document.createDocumentFragment()
 
 let carrito = {} //Crear el carrito
 
-const producto = [ 
-    {
-      "precio": 5000,
-      "id": 1,
-      "title": "Torta 1",
-      "thumbnailUrl": "./img/Torta1.png"
 
-    },
-    {
-      "precio": 3000,
-      "id": 2,
-      "title": "Torta 2",
-      "thumbnailUrl": "./img/Torta2.png"
-    },
-    {
-      "precio": 100,
-      "id": 3,
-      "title": "Torta 3",
-      "thumbnailUrl": "./img/Torta3.png" 
-    },
-    {
-      "precio": 5000,
-      "id": 4,
-      "title": "Torta 4",
-      "thumbnailUrl": "./img/Torta4.png"
-    },
-    {
-      "precio": 3500,
-      "id": 5,
-      "title": "Torta 5",
-      "thumbnailUrl": "./img/Torta5.png"
-    },
-    {
-      "precio": 5300,
-      "id": 6,
-      "title": "Torta 6",
-      "thumbnailUrl": "./img/Torta6.png"
-    }
-    
-  ]
-
-document.addEventListener(`DOMContentLoaded`, () => { 
-    pintarCards (producto) 
+document.addEventListener(`DOMContentLoaded`, async () => { 
+   
+    await fetchData()
     if (localStorage.getItem('carrito')) {           //Guardar carrigo localStorage
         carrito = JSON.parse(localStorage.getItem('carrito'))
         pintarCarrito ()
@@ -64,7 +25,7 @@ items.addEventListener('click', e => {
     btnAccion(e)
 })
 
-/*const fetchData = async () => {
+const fetchData = async () => {
     try {
         const res = await fetch(`api.json`)
         const data = await res.json()
@@ -73,7 +34,7 @@ items.addEventListener('click', e => {
     } catch (error) {
         console.log(error)
     }
-}*/
+}
 
 const pintarCards = data  => {
     //console.log(data)
@@ -111,10 +72,8 @@ const setCarrito = objeto => {
     if(carrito.hasOwnProperty(producto.id)) {
         producto.cantidad = carrito[producto.id].cantidad + 1;
        
-        
     }
     
-
     carrito[producto.id] = {...producto}
     pintarCarrito()
 
