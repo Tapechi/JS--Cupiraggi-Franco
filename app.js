@@ -5,8 +5,10 @@ const templateCard = document.getElementById('template-card').content
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
+const modal =document.getElementsByClassName('modal-body').content
 
 let carrito = {} //Crear el carrito
+
 
 
 document.addEventListener(`DOMContentLoaded`, async () => { 
@@ -37,7 +39,7 @@ const fetchData = async () => {
 }
 
 const pintarCards = data  => {
-    //console.log(data)
+
     data.forEach(producto => {
         templateCard.querySelector('h5').textContent = producto.title
         templateCard.querySelector('p').textContent = producto.precio
@@ -50,10 +52,10 @@ const pintarCards = data  => {
 }
 
 
-//Evento para capturar ciertos elementos
+
 
 const addCarrito = e => {
-    //console.log(e.target)
+
     //console.log(e.target.classList.contains('btn-dark'))  //Si el evento click es true en 'bnt-dark' Devuelve true
     if (e.target.classList.contains('btn-dark')) {
         setCarrito(e.target.parentElement)
@@ -95,6 +97,8 @@ const pintarCarrito = () => {
     })
     items.appendChild(fragment)
 
+
+    
     pintarFooter()
 
     localStorage.setItem('carrito', JSON.stringify(carrito))    //Guardando lo que venga del carrito
@@ -104,7 +108,7 @@ const pintarFooter = () => {
     footer.innerHTML = ''
     if(Object.keys(carrito).length === 0 ) {
         footer.innerHTML = `
-        <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+        <th scope="row" colspan="5">Todavia no seleccionaste ninguna torta para comprar.</th>
        `
        return
     }
@@ -119,13 +123,37 @@ const pintarFooter = () => {
     fragment.appendChild(clone)
     footer.appendChild(fragment)
     
+    const hola = document.getElementById('terminar-compra')
+    hola.addEventListener('click', () => {
+        console.log("hola")
+        Swal.fire({
+            title: 'Estas por confirmar tu compra?',
+            text: "Desea confirmar la compra?",
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si , confirmar compra'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                carrito = {}
+                pintarCarrito ()
+              Swal.fire(
+                'Confirmado!',
+                'Gracias por su compra.',
+                'success'
+              )
+            }
+          })
+        
+    })
+
     const btnBorrar = document.getElementById('vaciar-carrito')
     btnBorrar.addEventListener('click', () => {
-        
-        Swal.fire({
+               Swal.fire({
             title: 'Estas seguro ?',
             text: "Se eliminara el carrito!",
-            icon: 'warning',
+            icon: 'error',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
@@ -137,13 +165,18 @@ const pintarFooter = () => {
                 Swal.fire(
                 'Borrado!',
                 'Ingrese su nuevo pedido.',
-                'success'
+                'warning'
               )
             }
           })
       
     })
 }
+
+ 
+
+
+
 
 const btnAccion = e => {
     if (e.target.classList.contains('btn-info')) {

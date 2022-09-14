@@ -3,38 +3,67 @@
     {
       "precio": 5000,
       "id": 1,
-      "title": "Torta 1",
+      "title": "Chocolate con frutilla",
+      "ingredientes": "",
       "thumbnailUrl": "https://img-global.cpcdn.com/recipes/479e82eb3d79af70/400x400cq70/photo.jpg"
     },
     {
       "precio": 3000,
       "id": 2,
-      "title": "Torta 2",
+      "title": "Frutos del bosque",
+      "ingredientes": "",
       "thumbnailUrl": "https://cocinerosargentinos.com/content/recipes/500x500/recipes.13695.jpeg"
     },
     {
-      "precio": 100,
+      "precio": 1000,
       "id": 3,
-      "title": "Torta 3",
+      "title": "Baño de chocolate",
+      "ingredientes": "",
       "thumbnailUrl": "https://cocinerosargentinos.com/content/recipes/500x500/recipes.13880.jpeg" 
     },
     {
       "precio": 5000,
       "id": 4,
-      "title": "Torta 4",
+      "title": "Frutillas y mas frutilla",
+      "ingredientes": "",
       "thumbnailUrl": "https://www.recetasjudias.com/wp-content/uploads/2015/04/Torta-de-crema-y-fresas-para-Pesaj-1.jpg"
     },
     {
       "precio": 3500,
       "id": 5,
-      "title": "Torta 5",
+      "title": "Dulce de leche con pepitas",
+      "ingredientes": "",
       "thumbnailUrl": "https://d320djwtwnl5uo.cloudfront.net/recetas/share/torta_Wk8PuOpz1Jl6D3KARHjErity4YwfVm.png"
     },
     {
       "precio": 5300,
       "id": 6,
-      "title": "Torta 6",
-      "thumbnailUrl": "https://www.recetasjudias.com/wp-content/uploads/2015/04/Torta-de-crema-y-fresas-para-Pesaj-1.jpg"
+      "title": "Feliz aniversario",
+      "ingredientes": "",
+      "thumbnailUrl": "https://i.pinimg.com/564x/2f/fc/55/2ffc55a879aa357f0905c8fd71806661.jpg"
+    },
+    {
+      "precio": 5500,
+      "id": 7,
+      "title": "Torta de cositos",
+      "ingredientes": "",
+      "thumbnailUrl": "https://floresavenida.com.ar/imgdb/productos/imgp868_Torta%207.webp"
+    },
+    {
+      "precio": 5300,
+      "id": 8,
+      "title": "rocklets Chocolatoso",
+      "ingredientes": "",
+      "thumbnailUrl": "https://lh3.googleusercontent.com/-NRhujFY6h3w/YFazxFBsPWI/AAAAAAAAcLw/ahZudY14ZcYNLVxun55D74qwezqURonogCLcBGAsYHQ/w640-h640/Torta%2BNoah%2B2%2BIV.jpg"
+    },
+    {
+      "precio": 5300,
+      "id": 9,
+      "title": "De la casa",
+      "ingredientes": "",
+      "thumbnailUrl": "https://floresavenida.com.ar/imgdb/productos/imgp1881_Torta%208.webp"
     }
+
+    
     
   ]
